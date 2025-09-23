@@ -123,22 +123,33 @@ h1 {
   box-shadow: 0 0 22px 0 #51fff8, 0 0 14px #39f9;
 }
 .hdmap-circle {
-  border-radius: 50%;
+  width: 186.6px;       /* 固定外層光環寬度 */
+  height: 94px;         /* 固定外層光環高度 */
+  border-radius: 44px;  /* 高度的一半，保持橢圓形 */
   background: #1a2238;
-  box-shadow: 0 0 26px 0 #51fff8, 0 0 20px #7dfbff88;
-  padding: 0;
-  overflow: hidden;
+  box-shadow:
+    0 0 30px 3px #51fff8,
+    0 0 40px 10px #7dfbff88,
+    0 0 18px 6px #33d6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  margin-bottom: 8px;
 }
 .hdmap-circle img {
-  display: block;
-  max-width: 85px;
-  max-height: 62px;
+  max-width: 160px;     /* 寬度較保守，不滿整個光環，留出光暈空間 */
+  max-height: 80px;     /* 高度設定小於光環高度 */
   width: auto;
   height: auto;
-  margin: auto;
-  border-radius: 11px;
+  border-radius: 12px;
   background: #fff2;
-  box-shadow: 0 0 7px #2999f5;
+  box-shadow:
+    0 0 12px #2999f5,
+    0 0 6px #81cfee;
+  position: relative;
+  z-index: 1;
 }
 
 /* 名稱單行置中（寬度及間距與上面對齊） */
@@ -275,3 +286,4 @@ h1 {
   </div>
 </body>
 </html>
+
