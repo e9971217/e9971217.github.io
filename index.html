@@ -89,20 +89,21 @@ h1 {
 .org-row {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 24px;
   margin-top: 0;
-  gap: 64px;
+  gap: 25px;
 }
 .org-logo-box {
-  width: 108px;
+  width: 186px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 .logo-xunwei {
-  margin-left: -32px;
+  margin-left: -50px; /* 左移調整 */
 }
 .logo-hdmap {
   margin-right: 0;
@@ -114,12 +115,11 @@ h1 {
   background: #181716;
   border-radius: 24px;
   box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
-  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
 }
-/* HDmap 矩形光環 */
 .hdmap-rect {
   width: 186px;
   height: 94px;
@@ -139,12 +139,10 @@ h1 {
   background: #222;
   margin: 0;
 }
-
-/* 名稱單行置中（寬度及間距與上面對齊） */
 .org-label-bar {
   display: flex;
   flex-direction: row;
-  gap: 106px;
+  gap: 186px;
   justify-content: center;
   align-items: baseline;
   margin-top: 10px;
@@ -152,15 +150,12 @@ h1 {
 .org-label {
   font-family: 'Orbitron', 'Roboto', sans-serif;
   color: #fff;
-  font-size: 1.11rem;
+  font-size: 1.14rem;
   letter-spacing: 1.2px;
-  text-shadow: 0 0 3px #00fff7;
-  margin-top: 0;
+  text-shadow: 0 0 4px #00fff7;
+  margin-top: 12px;
   text-align: center;
-  width: 108px;
-}
-.org-label-hdmap {
-  width: 186px;
+  width: 100%;
 }
 
 /* 其它區塊維持原樣 */
@@ -248,15 +243,19 @@ h1 {
   </div>
   <div class="org-row">
     <div class="org-logo-box logo-xunwei">
-      <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
+      <span class="org-logo">
+        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" style="width:92px;height:92px;border-radius:18px;" />
+      </span>
     </div>
     <div class="org-logo-box">
-      <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
+      <span class="org-logo">
+        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" style="width:90px;height:90px;border-radius:20px;" />
+      </span>
     </div>
     <div class="org-logo-box logo-hdmap">
-      <div class="hdmap-rect">
+      <span class="hdmap-rect">
         <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
-      </div>
+      </span>
     </div>
   </div>
   <div class="org-label-bar">
