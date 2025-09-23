@@ -40,8 +40,6 @@ body {
   justify-content: center;
   margin-right: 38px;
   margin-left: 50px;
-  box-shadow: none;
-  border: none;
 }
 .profile-img {
   width: 320px;
@@ -91,17 +89,17 @@ h1 {
 .org-row {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 6px;
   margin-top: 0;
-  gap: 62px;
+  gap: 64px;
 }
 .org-logo-box {
+  width: 106px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 120px;
 }
 .logo-xunwei {
   margin-left: -32px;
@@ -109,47 +107,48 @@ h1 {
 .logo-hdmap {
   margin-right: -32px;
 }
-.org-logo {
+.org-logo, .hdmap-circle {
   width: 94px;
   height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+/* 一致發光 */
+.org-logo {
   object-fit: contain;
   background: #fff2;
   border-radius: 16px;
-  box-shadow: 0 0 14px #39f9;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 0 22px 0 #51fff8, 0 0 14px #39f9;
 }
-/* HDMap 用圓形外環包覆，長寬自適配，不變形 */
 .hdmap-circle {
-  height: 94px;
-  width: 186.6px;
   border-radius: 50%;
   background: #1a2238;
-  box-shadow: 0 0 20px #7dfbff88;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
+  box-shadow: 0 0 26px 0 #51fff8, 0 0 20px #7dfbff88;
+  padding: 0;
+  overflow: hidden;
 }
 .hdmap-circle img {
-  width: 183px;
-  height: auto;     /* 保持原比例 */
-  max-height: 72px;
-  border-radius: 12px;
+  display: block;
+  max-width: 85px;
+  max-height: 62px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  border-radius: 11px;
   background: #fff2;
-  box-shadow: 0 0 8px #2999f5;
+  box-shadow: 0 0 7px #2999f5;
 }
 
-/* 機構三字同排居中 */
+/* 名稱單行置中（寬度及間距與上面對齊） */
 .org-label-bar {
   display: flex;
   flex-direction: row;
-  gap: 67px;
+  gap: 106px; /* 必與 .org-logo-box 寬度同步 */
   justify-content: center;
   align-items: baseline;
-  margin-top: 0;
+  margin-top: 10px;
 }
 .org-label {
   font-family: 'Orbitron', 'Roboto', sans-serif;
@@ -157,7 +156,9 @@ h1 {
   font-size: 1.11rem;
   letter-spacing: 1.2px;
   text-shadow: 0 0 3px #00fff7;
-  margin-top: 3px;
+  margin-top: 0;
+  text-align: center;
+  width: 106px;
 }
 
 /* 其它區塊維持原樣 */
@@ -209,7 +210,7 @@ h1 {
     margin-left: 0;
   }
   .org-row {
-    gap: 18px;
+    gap: 20px;
   }
   .org-label-bar {
     gap: 18px;
@@ -218,6 +219,7 @@ h1 {
   .logo-hdmap {
     margin: 0;
   }
+  .org-logo-box, .org-label { width: 100% !important;}
 }
 </style>
 </head>
@@ -251,9 +253,9 @@ h1 {
         <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
       </div>
       <div class="org-logo-box logo-hdmap">
-        <div class="hdmap-circle">
+        <span class="hdmap-circle">
           <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
-        </div>
+        </span>
       </div>
     </div>
     <div class="org-label-bar">
@@ -273,9 +275,3 @@ h1 {
   </div>
 </body>
 </html>
-
-
-
-
-
-
