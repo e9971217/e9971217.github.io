@@ -102,26 +102,24 @@ h1 {
   align-items: center;
 }
 .logo-xunwei {
-  margin-left: -60px; /* 往左大幅移動，可自行微調數值 */
+  margin-left: -32px;
 }
 .logo-hdmap {
   margin-right: 0;
 }
-.org-logo, .hdmap-rect {
+.org-logo {
   width: 94px;
   height: 94px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0;
-}
-.org-logo {
   object-fit: contain;
   background: #181716;
   border-radius: 24px;
   box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
+  margin-bottom: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+/* HDmap 矩形光環 */
 .hdmap-rect {
   width: 186px;
   height: 94px;
@@ -223,63 +221,58 @@ h1 {
   .logo-hdmap {
     margin: 0;
   }
-  .org-logo-box, .org-label { width: 100% !important;}
 }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header-flex">
-      <div class="profile-box">
-        <img class="profile-img" src="https://github.com/e9971217/e9971217.github.io/raw/main/Xian.png" alt="Profile Image" />
-      </div>
-      <div class="info-box">
-        <h1>林承賢 Cheng Xian Lin</h1>
-        <div class="intro">
-          I am currently working as a software engineer at XunweiTech, specializing in Consumer BG development for positioning, navigation, and communication.<br />
-          Previously, I completed both my bachelor's and master's degrees at National Cheng Kung University, majoring in Geomatics with a focus on inertial navigation, aided navigation and positioning, computer vision, and image/video processing. My master's advisors were Professor Kai-Wei Chiang.
-        </div>
-        <div class="links-bar">
-          <a href="#">Email</a> /
-          <a href="#">CV</a> /
-          <a href="#">Google Scholar</a> /
-          <a href="#">LinkedIn</a> /
-          <a href="#">Github</a> /
-          <a href="#">YouTube</a>
-        </div>
-      </div>
+<div class="container">
+  <div class="header-flex">
+    <div class="profile-box">
+      <img class="profile-img" src="https://github.com/e9971217/e9971217.github.io/raw/main/Xian.png" alt="Profile Image" />
     </div>
-    <div class="org-row">
-      <div class="org-logo-box logo-xunwei">
-        <span class="org-logo">
-          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
-        </span>
+    <div class="info-box">
+      <h1>林承賢 Cheng Xian Lin</h1>
+      <div class="intro">
+        I am currently working as a software engineer at XunweiTech, specializing in Consumer BG development for positioning, navigation, and communication.<br />
+        Previously, I completed both my bachelor's and master's degrees at National Cheng Kung University, majoring in Geomatics with a focus on inertial navigation, aided navigation and positioning, computer vision, and image/video processing. My master's advisors were Professor Kai-Wei Chiang.
       </div>
-      <div class="org-logo-box">
-        <span class="org-logo">
-          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
-        </span>
+      <div class="links-bar">
+        <a href="#">Email</a> /
+        <a href="#">CV</a> /
+        <a href="#">Google Scholar</a> /
+        <a href="#">LinkedIn</a> /
+        <a href="#">Github</a> /
+        <a href="#">YouTube</a>
       </div>
-      <div class="org-logo-box logo-hdmap">
-        <span class="hdmap-rect">
-          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
-        </span>
-      </div>
-    </div>
-    <div class="org-label-bar">
-      <span class="org-label">Xunwei</span>
-      <span class="org-label">NCKU</span>
-      <span class="org-label org-label-hdmap">HDMap Center</span>
-    </div>
-    <span class="section-title">News</span>
-    <div class="news-block">
-      <strong>2022</strong> — Completed master’s degree at NCKU and started working.
-    </div>
-    <span class="section-title">Research & Interests</span>
-    <div class="research-block">
-      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br />
-      My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
     </div>
   </div>
+  <div class="org-row">
+    <div class="org-logo-box logo-xunwei">
+      <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
+    </div>
+    <div class="org-logo-box">
+      <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
+    </div>
+    <div class="org-logo-box logo-hdmap">
+      <div class="hdmap-rect">
+        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
+      </div>
+    </div>
+  </div>
+  <div class="org-label-bar">
+    <span class="org-label">Xunwei</span>
+    <span class="org-label">NCKU</span>
+    <span class="org-label org-label-hdmap">HDMap Center</span>
+  </div>
+  <span class="section-title">News</span>
+  <div class="news-block">
+    <strong>2022</strong> — Completed master’s degree at NCKU and started working.
+  </div>
+  <span class="section-title">Research & Interests</span>
+  <div class="research-block">
+    I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br />
+    My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
+  </div>
+</div>
 </body>
 </html>
