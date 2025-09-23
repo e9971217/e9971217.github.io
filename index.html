@@ -40,6 +40,8 @@ body {
   justify-content: center;
   margin-right: 38px;
   margin-left: 50px;
+  box-shadow: none;
+  border: none;
 }
 .profile-img {
   width: 320px;
@@ -96,7 +98,7 @@ h1 {
   gap: 64px;
 }
 .org-logo-box {
-  width: 106px;
+  width: 108px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,38 +120,34 @@ h1 {
 /* 一致發光 */
 .org-logo {
   object-fit: contain;
-  background: #fff2;
-  border-radius: 16px;
-  box-shadow: 0 0 22px 0 #51fff8, 0 0 14px #39f9;
+  background: #181716;
+  border-radius: 24px;
+  box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hdmap-circle {
-  width: 186.6px;       /* 固定外層光環寬度 */
-  height: 94px;         /* 固定外層光環高度 */
-  border-radius: 44px;  /* 高度的一半，保持橢圓形 */
-  background: #1a2238;
-  box-shadow:
-    0 0 30px 3px #51fff8,
-    0 0 40px 10px #7dfbff88,
-    0 0 18px 6px #33d6e6;
+  width: 186.6px;
+  height: 94px;
+  border-radius: 32px;
+  background: #181716;
+  box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: visible;
-  position: relative;
-  margin-bottom: 8px;
+  justify-content: center;
+  margin-bottom: 0;
 }
 .hdmap-circle img {
-  max-width: 160px;     /* 寬度較保守，不滿整個光環，留出光暈空間 */
-  max-height: 80px;     /* 高度設定小於光環高度 */
-  width: auto;
+  width: 180px;
   height: auto;
+  max-height: 65px;
+  object-fit: contain;
   border-radius: 12px;
-  background: #fff2;
-  box-shadow:
-    0 0 12px #2999f5,
-    0 0 6px #81cfee;
-  position: relative;
-  z-index: 1;
+  background: #222;
+  box-shadow: 0 0 8px #57e5f5;
+  margin: auto;
 }
 
 /* 名稱單行置中（寬度及間距與上面對齊） */
@@ -169,7 +167,7 @@ h1 {
   text-shadow: 0 0 3px #00fff7;
   margin-top: 0;
   text-align: center;
-  width: 106px;
+  width: 108px;
 }
 
 /* 其它區塊維持原樣 */
@@ -230,7 +228,6 @@ h1 {
   .logo-hdmap {
     margin: 0;
   }
-  .org-logo-box, .org-label { width: 100% !important;}
 }
 </style>
 </head>
@@ -286,4 +283,3 @@ h1 {
   </div>
 </body>
 </html>
-
