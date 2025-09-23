@@ -6,174 +6,219 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: radial-gradient(circle at 30% 20%, #191970 60%, #0a0b1a 100%);
-    font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
-    color: #00fff7;
-    box-sizing: border-box;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 20%, #191970 60%, #0a0b1a 100%);
+  font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+  color: #00fff7;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1080px;
+  margin: 50px auto 0 auto;
+  padding: 38px 50px;
+  background: rgba(20, 24, 48, 0.89);
+  border-radius: 22px;
+  box-shadow: 0 0 64px #0ff7;
+  border: 2.5px solid #9becff;
+}
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.profile-box {
+  width: 320px;
+  height: 320px;
+  background: #181716;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 38px;
+  margin-left: 50px;
+  box-shadow: none;
+  border: none;
+}
+.profile-img {
+  width: 320px;
+  height: 320px;
+  border-radius: 22px;
+  object-fit: cover;
+  background: #222;
+}
+.info-box {
+  flex: 0 1 600px;
+  max-width: 600px;
+  margin-top: 0;
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+  margin-top: 0;
+  letter-spacing: 2.3px;
+  text-shadow: 0 0 15px #00fff7, 0 0 2px #b43fff;
+}
+.intro {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #e059ec;
+  line-height: 1.62;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.links-bar {
+  margin: 22px 0 0 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.links-bar a {
+  color: #8df8ff;
+  font-size: 1.02rem;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.links-bar a:hover {
+  color: #fff;
+}
+.org-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  margin-top: 0;
+  gap: 62px;
+}
+.org-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+.logo-xunwei {
+  margin-left: -32px;
+}
+.logo-hdmap {
+  margin-right: -32px;
+}
+.org-logo {
+  width: 94px;
+  height: 94px;
+  object-fit: contain;
+  background: #fff2;
+  border-radius: 16px;
+  box-shadow: 0 0 14px #39f9;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* HDMap 用圓形外環包覆，長寬自適配，不變形 */
+.hdmap-circle {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background: #1a2238;
+  box-shadow: 0 0 20px #7dfbff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.hdmap-circle img {
+  width: 84px;
+  height: auto;     /* 保持原比例 */
+  max-height: 72px;
+  border-radius: 12px;
+  background: #fff2;
+  box-shadow: 0 0 8px #2999f5;
+}
+
+/* 機構三字同排居中 */
+.org-label-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 67px;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 0;
+}
+.org-label {
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 1.11rem;
+  letter-spacing: 1.2px;
+  text-shadow: 0 0 3px #00fff7;
+  margin-top: 3px;
+}
+
+/* 其它區塊維持原樣 */
+.section-title {
+  font-size: 1.68rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #7ffbff;
+  text-shadow: 0 0 8px #0ff, 0 0 3px #f09bf4;
+  margin-bottom: 12px;
+  margin-top: 18px;
+  letter-spacing: 2px;
+}
+.news-block {
+  padding: 13px 16px;
+  background: rgba(30, 18, 51, 0.91);
+  border: 1.5px solid #b43fff;
+  border-radius: 8px;
+  color: #e0aaff;
+  font-family: 'Roboto', monospace;
+  font-size: 1.12rem;
+  box-shadow: 0 0 12px #ff5ffb53;
+  margin-bottom: 18px;
+  margin-top: 7px;
+}
+.research-block {
+  padding: 15px 15px;
+  background: rgba(30, 18, 51, 0.93);
+  border-radius: 9px;
+  color: #fff;
+  box-shadow: 0 0 12px #0ff;
+  font-size: 1.12rem;
+  font-family: 'Roboto', monospace;
+  margin-bottom: 6px;
+}
+@media (max-width: 900px) {
   .container {
-    max-width: 1080px;
-    margin: 50px auto 0 auto;
-    padding: 38px 50px; /* 左右都50px */
-    background: rgba(20, 24, 48, 0.89);
-    border-radius: 22px;
-    box-shadow: 0 0 64px #0ff7;
-    border: 2.5px solid #9becff;
+    padding: 8px 16px;
   }
-  .header-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 40px;
-  }
-  .profile-box {
-    width: 320px;
-    height: 320px;
-    background: #181716;
-    border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 38px;
-    margin-left: 50px; /* 個人圖片左側預留50px */
-    box-shadow: none;
-    border: none;
-  }
-  .profile-img {
-    width: 320px;
-    height: 320px;
-    border-radius: 22px;
-    object-fit: cover;
-    background: #222;
-  }
-  .info-box {
-    flex: 0 1 600px;
-    max-width: 600px;
-    margin-top: 0;
-  }
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 15px;
-    margin-top: 0;
-    letter-spacing: 2.3px;
-    text-shadow: 0 0 15px #00fff7, 0 0 2px #b43fff;
-  }
-  .intro {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.15rem;
-    color: #e059ec;
-    line-height: 1.62;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  .links {
-    margin-top: 10px;
-  }
-  .links a {
-    color: #aafaff;
-    text-decoration: underline;
-    margin-right: 16px;
-    font-size: 1.05rem;
-  }
+  .header-flex,
   .org-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    margin-bottom: 38px;
-    margin-top: 0;
-    gap: 44px;
-  }
-  .org-logo-box {
-    width: 106px;
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .logo-xunwei {
-    margin-left: -32px;
+  .profile-box {
+    margin: 0 0 10px 0;
   }
+  .info-box {
+    max-width: 100vw;
+    margin-left: 0;
+  }
+  .org-row {
+    gap: 18px;
+  }
+  .org-label-bar {
+    gap: 18px;
+  }
+  .logo-xunwei,
   .logo-hdmap {
-    margin-right: -32px;
+    margin: 0;
   }
-  .org-logo-box img {
-    width: 94px;
-    height: 94px;
-    object-fit: contain;
-    background: #fff2;
-    border-radius: 13px;
-    box-shadow: 0 0 14px #39f9;
-    margin-bottom: 9px;
-  }
-  .org-label {
-    font-family: 'Orbitron', 'Roboto', sans-serif;
-    color: #fff;
-    font-size: 1.09rem;
-    margin-top: 2px;
-    letter-spacing: 1.2px;
-    text-shadow: 0 0 3px #00fff7;
-  }
-  .section-title {
-    font-size: 1.68rem;
-    font-family: 'Orbitron', sans-serif;
-    color: #7ffbff;
-    text-shadow: 0 0 8px #0ff, 0 0 3px #f09bf4;
-    margin-bottom: 12px;
-    margin-top: 18px;
-    letter-spacing: 2px;
-  }
-  .news-block {
-    padding: 13px 16px;
-    background: rgba(30, 18, 51, 0.91);
-    border: 1.5px solid #b43fff;
-    border-radius: 8px;
-    color: #e0aaff;
-    font-family: 'Roboto', monospace;
-    font-size: 1.12rem;
-    box-shadow: 0 0 12px #ff5ffb53;
-    margin-bottom: 18px;
-    margin-top: 7px;
-  }
-  .research-block {
-    padding: 15px 15px;
-    background: rgba(30, 18, 51, 0.93);
-    border-radius: 9px;
-    color: #fff;
-    box-shadow: 0 0 12px #0ff;
-    font-size: 1.12rem;
-    font-family: 'Roboto', monospace;
-    margin-bottom: 6px;
-  }
-  @media (max-width: 900px) {
-    .container {
-      padding: 8px 20px;
-    }
-    .header-flex,
-    .org-row {
-      flex-direction: column;
-      align-items: center;
-    }
-    .profile-box {
-      margin: 0 0 10px 0;
-    }
-    .info-box {
-      max-width: 100vw;
-      margin-left: 0;
-    }
-    .org-row {
-      gap: 18px;
-    }
-    .logo-xunwei,
-    .logo-hdmap {
-      margin: 0;
-    }
-  }
+}
 </style>
 </head>
 <body>
@@ -188,27 +233,33 @@
           I am currently working as a software engineer at XunweiTech, specializing in Consumer BG development for positioning, navigation, and communication.<br />
           Previously, I completed both my bachelor's and master's degrees at National Cheng Kung University, majoring in Geomatics with a focus on inertial navigation, aided navigation and positioning, computer vision, and image/video processing. My master's advisors were Professor Kai-Wei Chiang.
         </div>
-        <div class="links">
-          <a href="#">Email</a>
-          <a href="#">CV</a>
-          <a href="#">Github</a>
-          <a href="#">LinkedIn</a>
+        <div class="links-bar">
+          <a href="#">Email</a> /
+          <a href="#">CV</a> /
+          <a href="#">Google Scholar</a> /
+          <a href="#">LinkedIn</a> /
+          <a href="#">Github</a> /
+          <a href="#">YouTube</a>
         </div>
       </div>
     </div>
     <div class="org-row">
       <div class="org-logo-box logo-xunwei">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
-        <span class="org-label">Xunwei</span>
+        <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
       </div>
       <div class="org-logo-box">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
-        <span class="org-label">NCKU</span>
+        <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
       </div>
       <div class="org-logo-box logo-hdmap">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
-        <span class="org-label">HDMap Center</span>
+        <div class="hdmap-circle">
+          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
+        </div>
       </div>
+    </div>
+    <div class="org-label-bar">
+      <span class="org-label">Xunwei</span>
+      <span class="org-label">NCKU</span>
+      <span class="org-label">HDMap Center</span>
     </div>
     <span class="section-title">News</span>
     <div class="news-block">
