@@ -55,7 +55,7 @@ body {
 }
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   color: #fff;
   margin-bottom: 15px;
   margin-top: 0;
@@ -88,26 +88,42 @@ h1 {
 }
 .org-row {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* LOGO 等距排列 */
+  justify-content: center; /* 中心对齐所有Logo */
   align-items: flex-end;
-  margin-bottom: 24px;
+  gap: 0; /* 取消原先gap，改用margin控制间距 */
+  margin-bottom: 0px;
   margin-top: 0;
-  gap: 25px;
 }
+
 .org-logo-box {
   width: 186px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin: 0; /* 默认无外边距 */
 }
+
+/* 给第一个Logo（Xunwei）右侧加 margin，制造右侧间距 */
 .logo-xunwei {
-  margin-left: -50px; /* 左移調整 */
+  margin-right: 40px;
+  margin-left: 0; /* 取消向左偏移，改成居中 */
 }
+
+/* 中间NCKU无额外margin，保证居中 */
+.logo-ncku {
+  justify-self: center; /* 中间NCKU居中 */
+  display: flex;
+  align-items: center;
+  margin-right: 0 px;
+  margin-left: 0 px;
+}
+
+/* 给第三个Logo（HDMap Center）左侧加 margin，制造左侧间距 */
 .logo-hdmap {
-  margin-right: 0;
+  margin-left: 85px;
 }
+
 .org-logo {
   width: 94px;
   height: 94px;
@@ -121,7 +137,7 @@ h1 {
   margin-bottom: 0;
 }
 .hdmap-rect {
-  width: 186px;
+  width: 190px;
   height: 94px;
   background: #181716;
   border-radius: 32px;
@@ -133,7 +149,7 @@ h1 {
 .hdmap-rect img {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 27px;
   object-fit: cover;
   box-shadow: 0 0 20px #2999f5;
   background: #222;
@@ -141,21 +157,55 @@ h1 {
 }
 .org-label-bar {
   display: flex;
-  flex-direction: row;
-  gap: 186px;
+  /* flex-direction: row;*/
+  /* gap: 186px; */
   justify-content: center;
   align-items: baseline;
-  margin-top: 10px;
+  margin-top: 0px; /*Logo圖與字樣間距*/
 }
+
+/* NCKU 文字置中，不額外margin */
+/* .org-label.ncku-label {
+  margin: 0;
+  justify-content: center;
+}*/
+
+/* Xunwei 文字向右外推 150px，製造間距 */
+.org-label.xunwei-label {
+  margin-right: 145px;
+  margin-left: 34px;
+}
+
+/* HDMap Center 文字向左外推 180px，注意是負margin為了靠近NCKU */
+.org-label.hdmap-label {
+  margin-left: 0px;
+  margin-right: 0;
+}
+
+
+.org-label.ncku-label {
+  display: inline-block;     /* 使寬度有效 */
+  width: 90px;               /* 與 NCKU logo 寬度相同 */
+  text-align: center;        /* 文字置中 */
+  margin-left: var(--ncku-gap-left, 100px);   /* 左側間距，預設100px */
+  margin-right: var(--ncku-gap-right, 100px); /* 右側間距，預設100px */
+  flex-shrink: 0;            /* 禁止縮小 */
+}
+
+:root {
+  --ncku-gap-left: 0px;
+  --ncku-gap-right: 156px;
+}
+
+
 .org-label {
   font-family: 'Orbitron', 'Roboto', sans-serif;
   color: #fff;
-  font-size: 1.14rem;
-  letter-spacing: 1.2px;
+  font-size: 1.07rem;
   text-shadow: 0 0 4px #00fff7;
-  margin-top: 12px;
+  margin-top: 15px;
   text-align: center;
-  width: 100%;
+  /* width: 90px;  設定寬度與NCKU logo相同 */
 }
 
 /* 其它區塊維持原樣 */
@@ -172,23 +222,25 @@ h1 {
   padding: 13px 16px;
   background: rgba(30, 18, 51, 0.91);
   border: 1.5px solid #b43fff;
-  border-radius: 8px;
+  border-radius: 11px;
   color: #e0aaff;
   font-family: 'Roboto', monospace;
   font-size: 1.12rem;
   box-shadow: 0 0 12px #ff5ffb53;
   margin-bottom: 18px;
-  margin-top: 7px;
+  margin-top: 8px;
 }
 .research-block {
   padding: 15px 15px;
   background: rgba(30, 18, 51, 0.93);
-  border-radius: 9px;
+  border-radius: 7px;
   color: #fff;
   box-shadow: 0 0 12px #0ff;
   font-size: 1.12rem;
   font-family: 'Roboto', monospace;
-  margin-bottom: 6px;
+  margin-bottom: 18px;
+  margin-top: 8px;
+
 }
 @media (max-width: 900px) {
   .container {
@@ -213,6 +265,7 @@ h1 {
     gap: 18px;
   }
   .logo-xunwei,
+  .logo-ncku,
   .logo-hdmap {
     margin: 0;
   }
@@ -226,43 +279,46 @@ h1 {
       <img class="profile-img" src="https://github.com/e9971217/e9971217.github.io/raw/main/Xian.png" alt="Profile Image" />
     </div>
     <div class="info-box">
-      <h1>林承賢 Cheng Xian Lin</h1>
+      <h1>Cheng-Xian (Nick) Lin | 林承賢</h1>
       <div class="intro">
         I am currently working as a software engineer at XunweiTech, specializing in Consumer BG development for positioning, navigation, and communication.<br />
         Previously, I completed both my bachelor's and master's degrees at National Cheng Kung University, majoring in Geomatics with a focus on inertial navigation, aided navigation and positioning, computer vision, and image/video processing. My master's advisors were Professor Kai-Wei Chiang.
       </div>
-      <div class="links-bar">
-        <a href="#">Email</a> /
-        <a href="#">CV</a> /
-        <a href="#">Google Scholar</a> /
-        <a href="#">LinkedIn</a> /
-        <a href="#">Github</a> /
-        <a href="#">YouTube</a>
-      </div>
+		<div class="links-bar">
+		  <a href="mailto:e9971217@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+		  /
+		  <a href="https://e9971217.github.io/" target="_blank" rel="noopener noreferrer">CV</a>
+		  /
+		  <a href="https://scholar.google.com/citations?user=mualSekAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+		  /
+		  <a href="https://www.linkedin.com/in/cheng-xian-lin-712846126/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+		  /
+		  <a href="https://github.com/e9971217" target="_blank" rel="noopener noreferrer">Github</a>
+		</div>
     </div>
   </div>
-  <div class="org-row">
-    <div class="org-logo-box logo-xunwei">
-      <span class="org-logo">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" style="width:92px;height:92px;border-radius:18px;" />
-      </span>
-    </div>
-    <div class="org-logo-box">
-      <span class="org-logo">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" style="width:90px;height:90px;border-radius:20px;" />
-      </span>
-    </div>
-    <div class="org-logo-box logo-hdmap">
-      <span class="hdmap-rect">
-        <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
-      </span>
-    </div>
-  </div>
-  <div class="org-label-bar">
-    <span class="org-label">Xunwei</span>
-    <span class="org-label">NCKU</span>
-    <span class="org-label org-label-hdmap">HDMap Center</span>
-  </div>
+	<div class="org-row">
+	  <div class="org-logo-box logo-xunwei">
+		<span class="org-logo">
+		  <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" style="width:92px;height:92px;border-radius:20px;" />
+		</span>
+	  </div>
+	  <div class="org-logo-box logo-ncku">
+		<span class="org-logo">
+		  <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" style="width:90px;height:90px;border-radius:18px;" />
+		</span>
+	  </div>
+	  <div class="org-logo-box logo-hdmap">
+		<span class="hdmap-rect">
+		  <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
+		</span>
+	  </div>
+	</div>
+	<div class="org-label-bar">
+	  <span class="org-label xunwei-label">Xunwei</span>
+	  <span class="org-label ncku-label">NCKU</span>
+	  <span class="org-label hdmap-label">HDMap Center</span>
+	</div>
   <span class="section-title">News</span>
   <div class="news-block">
     <strong>2022</strong> — Completed master’s degree at NCKU and started working.
