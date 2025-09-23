@@ -40,8 +40,6 @@ body {
   justify-content: center;
   margin-right: 38px;
   margin-left: 50px;
-  box-shadow: none;
-  border: none;
 }
 .profile-img {
   width: 320px;
@@ -104,12 +102,12 @@ h1 {
   align-items: center;
 }
 .logo-xunwei {
-  margin-left: -32px;
+  margin-left: -60px; /* 往左大幅移動，可自行微調數值 */
 }
 .logo-hdmap {
-  margin-right: -32px;
+  margin-right: 0;
 }
-.org-logo, .hdmap-circle {
+.org-logo, .hdmap-rect {
   width: 94px;
   height: 94px;
   display: flex;
@@ -117,44 +115,38 @@ h1 {
   justify-content: center;
   margin-bottom: 0;
 }
-/* 一致發光 */
 .org-logo {
   object-fit: contain;
   background: #181716;
   border-radius: 24px;
   box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
-  margin-bottom: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.hdmap-circle {
-  width: 186.6px;
+.hdmap-rect {
+  width: 186px;
   height: 94px;
-  border-radius: 32px;
   background: #181716;
+  border-radius: 32px;
   box-shadow: 0 0 22px #4af8e7, 0 0 18px #39bbf9;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0;
 }
-.hdmap-circle img {
-  width: 180px;
-  height: auto;
-  max-height: 65px;
-  object-fit: contain;
-  border-radius: 12px;
+.hdmap-rect img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: 0 0 20px #2999f5;
   background: #222;
-  box-shadow: 0 0 8px #57e5f5;
-  margin: auto;
+  margin: 0;
 }
 
 /* 名稱單行置中（寬度及間距與上面對齊） */
 .org-label-bar {
   display: flex;
   flex-direction: row;
-  gap: 106px; /* 必與 .org-logo-box 寬度同步 */
+  gap: 106px;
   justify-content: center;
   align-items: baseline;
   margin-top: 10px;
@@ -168,6 +160,9 @@ h1 {
   margin-top: 0;
   text-align: center;
   width: 108px;
+}
+.org-label-hdmap {
+  width: 186px;
 }
 
 /* 其它區塊維持原樣 */
@@ -228,6 +223,7 @@ h1 {
   .logo-hdmap {
     margin: 0;
   }
+  .org-logo-box, .org-label { width: 100% !important;}
 }
 </style>
 </head>
@@ -255,13 +251,17 @@ h1 {
     </div>
     <div class="org-row">
       <div class="org-logo-box logo-xunwei">
-        <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
+        <span class="org-logo">
+          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
+        </span>
       </div>
       <div class="org-logo-box">
-        <img class="org-logo" src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
+        <span class="org-logo">
+          <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
+        </span>
       </div>
       <div class="org-logo-box logo-hdmap">
-        <span class="hdmap-circle">
+        <span class="hdmap-rect">
           <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
         </span>
       </div>
@@ -269,7 +269,7 @@ h1 {
     <div class="org-label-bar">
       <span class="org-label">Xunwei</span>
       <span class="org-label">NCKU</span>
-      <span class="org-label">HDMap Center</span>
+      <span class="org-label org-label-hdmap">HDMap Center</span>
     </div>
     <span class="section-title">News</span>
     <div class="news-block">
