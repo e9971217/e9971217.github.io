@@ -1,139 +1,186 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>歡迎來到賽博龐克世界</title>
+<meta charset="UTF-8">
+<title>Cheng Xian Lin | 林承賢</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
   body {
     margin: 0;
-    height: 100vh;
-    background: #0f0c29;  /* 深紫黑背景 */
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Orbitron', monospace;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 20%, #191970 60%, #0a0b1a 100%);
+    font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
     color: #00fff7;
-    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 820px;
+    margin: 40px auto 0 auto;
+    padding: 36px;
+    background: rgba(20, 24, 48, 0.80);
+    border-radius: 18px;
+    box-shadow: 0 0 50px #0ff9;
+    border: 2px solid #00fff7;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 35px;
+  }
+  .profile-img {
+    width: 148px;
+    height: 148px;
+    border-radius: 18px;
+    border: 3px solid #6f18d5;
+    box-shadow: 0 0 30px #00fff7;
+    object-fit: cover;
+    background: #222;
+    margin-top: 8px;
+  }
+  .title-block {
+    flex: 2;
+    min-width: 220px;
   }
   h1 {
-    font-size: 4rem;
-    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px #00fff7, 0 0 2px #b43fff;
+  }
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #ff5ffb;
+    margin-top: 2px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .links {
+    margin: 8px 0 0 0;
+    font-size: 1rem;
     color: #00fff7;
-    text-shadow:
-       0 0 5px #0ff,
-       0 0 10px #0ff,
-       0 0 20px #0ff,
-       0 0 40px #08f,
-       0 0 80px #08f,
-       0 0 90px #08f,
-       0 0 100px #08f,
-       0 0 150px #08f;
-    animation: glow 2s ease-in-out infinite alternate;
   }
-  @keyframes glow {
-    from {
-      text-shadow:
-        0 0 10px #0ff,
-        0 0 20px #0ff,
-        0 0 30px #00fff7,
-        0 0 40px #08f,
-        0 0 50px #08f,
-        0 0 60px #08f;
-    }
-    to {
-      text-shadow:
-        0 0 20px #0ff,
-        0 0 30px #00fff7,
-        0 0 40px #08f,
-        0 0 50px #0ff,
-        0 0 70px #0ff,
-        0 0 80px #0ff;
-    }
+  .links a {
+    color: #ff5ffb;
+    text-decoration: underline;
+    margin-right: 16px;
   }
-  .neon-border {
-    border: 3px solid #0ff;
-    padding: 20px 60px;
-    border-radius: 12px;
-    box-shadow:
-      0 0 10px #0ff,
-      0 0 20px #0ff,
-      0 0 30px #0ff,
-      0 0 40px #0ff;
+  .org-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 22px;
   }
-  /* 背景動態粒子 */
-  .bg-particles {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: -1;
+  .org-logo {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+    filter: drop-shadow(0 0 8px #0ff);
   }
+  .org-logo img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-bottom: 12px;
+  }
+  .org-label {
+    display: block;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Orbitron', 'Roboto', sans-serif;
+    margin-top: 2px;
+    letter-spacing: 1.2px;
+  }
+  section {
+    margin-bottom: 30px;
+  }
+  .section-title {
+    font-size: 1.7rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #00fff7;
+    text-shadow: 0 0 8px #0ff, 0 0 3px #f09bf4;
+    margin-bottom: 13px;
+    letter-spacing: 2px;
+  }
+  .news-block {
+    padding: 16px 16px;
+    background: rgba(30, 18, 51, 0.97);
+    border: 1.5px solid #b43fff;
+    border-radius: 8px;
+    color: #e0aaff;
+    font-family: 'Roboto', monospace;
+    font-size: 1.05rem;
+    box-shadow: 0 0 12px #ff5ffb44;
+    margin-bottom: 8px;
+    overflow-x: auto;
+  }
+  .research-block {
+    padding: 18px 15px;
+    background: rgba(30, 18, 51, 0.93);
+    border-radius: 9px;
+    color: #fff;
+    box-shadow: 0 0 12px #0ff;
+    font-size: 1.08rem;
+    font-family: 'Roboto', monospace;
+  }
+  /* Neon flicker effect for cyberpunk touch */
+  @keyframes neon-flicker {
+    0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #b43fff;}
+    55% { text-shadow: 0 0 25px #0ff, 0 0 35px #ff5ffb;}
+    75% { text-shadow: 0 0 10px #0ff, 0 0 20px #b43fff;}
+  }
+  h1, .section-title { animation: neon-flicker 2.5s infinite alternate; }
 </style>
 </head>
 <body>
-  <div class="neon-border">
-    <h1>Welcome to Cyberpunk</h1>
+<div class="container">
+  <header>
+    <img class="profile-img" src="image.jpg" alt="Profile Image"/>
+    <div class="title-block">
+      <h1>林承賢 Cheng Xian Lin</h1>
+      <h2>國立成功大學碩士生<br/>Master Student, National Cheng Kung University</h2>
+      <div class="links">
+        <a href="#">Email</a>
+        <a href="#">CV</a>
+        <a href="#">Github</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+  <div class="org-row">
+    <div class="org-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/National_Cheng_Kung_University.svg"
+      alt="NCKU" />
+      <span class="org-label">NCKU</span>
+    </div>
+    <div class="org-logo">
+      <img src="https://www.logitech.com/etc.clientlibs/logitech/clientlibs/clientlib-site/resources/images/logitech-logo.svg"
+      alt="Logitech" />
+      <span class="org-label">Logitech</span>
+    </div>
+    <div class="org-logo">
+      <img src="https://hdmapcenter.ncku.edu.tw/images/logo_hdmap.png"
+      alt="HDMap Center" />
+      <span class="org-label">HDMap Center</span>
+    </div>
   </div>
-
-  <canvas class="bg-particles"></canvas>
-
-  <script>
-    // 簡單粒子動畫模擬霓虹微光效果
-    const canvas = document.querySelector('.bg-particles');
-    const ctx = canvas.getContext('2d');
-    let w, h;
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    window.onresize = resize;
-    resize();
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.size = Math.random() * 2 + 1;
-        this.speedY = Math.random() * 0.5 + 0.2;
-        this.opacity = Math.random() * 0.5 + 0.3;
-      }
-      update() {
-        this.y -= this.speedY;
-        if (this.y < 0) this.reset();
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
-        ctx.shadowColor = '#0ff';
-        ctx.shadowBlur = 10;
-        ctx.fill();
-      }
-    }
-
-    const particles = [];
-    for (let i = 0; i < 80; i++) {
-      particles.push(new Particle());
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-  </script>
+  <section>
+    <span class="section-title">News</span>
+    <div class="news-block">
+      <strong>2022</strong> &mdash; Completed master’s degree at NCKU and started working.
+    </div>
+  </section>
+  <section>
+    <span class="section-title">Research & Interests</span>
+    <div class="research-block">
+      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br>
+      My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
+    </div>
+  </section>
+</div>
 </body>
 </html>
-
-
