@@ -31,9 +31,9 @@
     gap: 35px;
   }
   .profile-img {
-    width: 148px;
-    height: 148px;
-    border-radius: 18px;
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
     border: 3px solid #6f18d5;
     box-shadow: 0 0 30px #00fff7;
     object-fit: cover;
@@ -46,14 +46,14 @@
   }
   h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem; /* 字號調小 */
+    font-size: 2rem;
     color: #ffffff;
     margin-bottom: 8px;
     letter-spacing: 2px;
     text-shadow: 0 0 15px #00fff7, 0 0 2px #b43fff;
   }
   p {
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #ff5ffb;
     line-height: 1.4;
@@ -95,7 +95,6 @@
     margin-top: 2px;
     letter-spacing: 1.2px;
   }
-  /* 置中NCKU Logo */
   .org-row-center {
     justify-content: center;
   }
@@ -136,13 +135,15 @@
     55% { text-shadow: 0 0 25px #0ff, 0 0 35px #ff5ffb;}
     75% { text-shadow: 0 0 10px #0ff, 0 0 20px #b43fff;}
   }
-  h1, .section-title { animation: neon-flicker 2.5s infinite alternate; }
+  h1, .section-title {
+    animation: neon-flicker 2.5s infinite alternate;
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <img class="profile-img" src="image.jpg" alt="Profile Image"/>
+    <img class="profile-img" src="https://github.com/e9971217/e9971217.github.io/raw/main/Xian.png" alt="Profile Image"/>
     <div class="title-block">
       <h1>林承賢 Cheng Xian Lin</h1>
       <p>
@@ -180,7 +181,7 @@
   <section>
     <span class="section-title">Research & Interests</span>
     <div class="research-block">
-      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br>
+      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br/>
       My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
     </div>
   </section>
