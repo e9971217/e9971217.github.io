@@ -46,7 +46,7 @@
   }
   h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.6rem;
+    font-size: 2rem; /* 字號調小 */
     color: #ffffff;
     margin-bottom: 8px;
     letter-spacing: 2px;
@@ -95,6 +95,10 @@
     margin-top: 2px;
     letter-spacing: 1.2px;
   }
+  /* 將 NCKU logo 居中 */
+  .org-row-center {
+    justify-content: center;
+  }
   section {
     margin-bottom: 30px;
   }
@@ -127,7 +131,6 @@
     font-size: 1.08rem;
     font-family: 'Roboto', monospace;
   }
-  /* Neon flicker effect for cyberpunk touch */
   @keyframes neon-flicker {
     0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #b43fff;}
     55% { text-shadow: 0 0 25px #0ff, 0 0 35px #ff5ffb;}
@@ -153,18 +156,15 @@
   </header>
   <div class="org-row">
     <div class="org-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/National_Cheng_Kung_University.svg"
-      alt="NCKU" />
+      <img src="https://github.com/e9971217/e9971217.github.io/raw/main/xunwei_logo.png" alt="Xunwei" />
+      <span class="org-label">Xunwei</span>
+    </div>
+    <div class="org-logo org-row-center">
+      <img src="https://github.com/e9971217/e9971217.github.io/raw/main/ncku_logo.png" alt="NCKU" />
       <span class="org-label">NCKU</span>
     </div>
     <div class="org-logo">
-      <img src="https://www.logitech.com/etc.clientlibs/logitech/clientlibs/clientlib-site/resources/images/logitech-logo.svg"
-      alt="Logitech" />
-      <span class="org-label">Logitech</span>
-    </div>
-    <div class="org-logo">
-      <img src="https://hdmapcenter.ncku.edu.tw/images/logo_hdmap.png"
-      alt="HDMap Center" />
+      <img src="https://github.com/e9971217/e9971217.github.io/raw/main/hdmap_logo.png" alt="HDMap Center" />
       <span class="org-label">HDMap Center</span>
     </div>
   </div>
@@ -177,10 +177,4 @@
   <section>
     <span class="section-title">Research & Interests</span>
     <div class="research-block">
-      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br>
-      My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
-    </div>
-  </section>
-</div>
-</body>
-</html>
+      I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on
