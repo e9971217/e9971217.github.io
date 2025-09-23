@@ -1,13 +1,138 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>隨意的 GitHub Pages 範例</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>歡迎來到賽博龐克世界</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #0f0c29;  /* 深紫黑背景 */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', monospace;
+    color: #00fff7;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #00fff7;
+    text-shadow:
+       0 0 5px #0ff,
+       0 0 10px #0ff,
+       0 0 20px #0ff,
+       0 0 40px #08f,
+       0 0 80px #08f,
+       0 0 90px #08f,
+       0 0 100px #08f,
+       0 0 150px #08f;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow:
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 30px #00fff7,
+        0 0 40px #08f,
+        0 0 50px #08f,
+        0 0 60px #08f;
+    }
+    to {
+      text-shadow:
+        0 0 20px #0ff,
+        0 0 30px #00fff7,
+        0 0 40px #08f,
+        0 0 50px #0ff,
+        0 0 70px #0ff,
+        0 0 80px #0ff;
+    }
+  }
+  .neon-border {
+    border: 3px solid #0ff;
+    padding: 20px 60px;
+    border-radius: 12px;
+    box-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 30px #0ff,
+      0 0 40px #0ff;
+  }
+  /* 背景動態粒子 */
+  .bg-particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>
 </head>
 <body>
-    <h1>歡迎來到我的 GitHub Pages T1 網站！</h1>
-    <p>這是一個非常簡單的靜態網頁範例。</p>
-    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y"></script>
+  <div class="neon-border">
+    <h1>Welcome to Cyberpunk</h1>
+  </div>
+
+  <canvas class="bg-particles"></canvas>
+
+  <script>
+    // 簡單粒子動畫模擬霓虹微光效果
+    const canvas = document.querySelector('.bg-particles');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.onresize = resize;
+    resize();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.size = Math.random() * 2 + 1;
+        this.speedY = Math.random() * 0.5 + 0.2;
+        this.opacity = Math.random() * 0.5 + 0.3;
+      }
+      update() {
+        this.y -= this.speedY;
+        if (this.y < 0) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
+        ctx.shadowColor = '#0ff';
+        ctx.shadowBlur = 10;
+        ctx.fill();
+      }
+    }
+
+    const particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
 
