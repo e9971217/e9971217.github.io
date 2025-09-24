@@ -232,6 +232,41 @@ h1 {
   margin-bottom: 18px;
   margin-top: 8px;
 }
+
+
+
+.news-block ul.timeline {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 2px solid #9becff;
+  margin: 0;
+}
+
+.news-block ul.timeline li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: #e0aaff;
+  font-family: 'Roboto', monospace;
+  font-size: 1.12rem;
+}
+
+.news-block ul.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #39bbf9;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #39bbf9;
+}
+
+
+
+
+
 .research-block {
   padding: 15px 15px;
   background: rgba(30, 18, 51, 0.93);
@@ -329,10 +364,18 @@ h1 {
 	</div>
   <span class="section-title">News</span>
   <div class="news-block">
-    <strong>Oct, 2022</strong> — Joined XunweiTech as a Software Engineer. </b>
-	<strong>Aug, 2020</strong> — Start my M.S. journey in Geomatics at NCKU. </b>
-	<strong>Aug, 2016</strong> — Matriculated for my Bachelor’s degree in Geomatics at NCKU. </b>
-	<strong>2022</strong> — Completed master’s degree at NCKU and started working.
+	  <p><strong>Oct, 2022</strong> — Joined XunweiTech as a Software Engineer.</p>
+	  <p><strong>Aug, 2020</strong> — Start my M.S. journey in Geomatics at NCKU.</p>
+	  <p><strong>Aug, 2016</strong> — Matriculated for my Bachelor’s degree in Geomatics at NCKU.</p>
+	  <p><strong>2022</strong> — Completed master’s degree at NCKU and started working.</p>
+  </div>
+  <div class="news-block">
+	<ul class="timeline">
+	  <li><strong>Oct, 2022</strong> Joined XunweiTech as a Software Engineer.</li>
+	  <li><strong>Aug, 2020</strong> Start my M.S. journey in Geomatics at NCKU.</li>
+	  <li><strong>Aug, 2016</strong> Matriculated for my Bachelor’s degree in Geomatics at NCKU.</li>
+	  <li><strong>2022</strong> — Completed master’s degree at NCKU and started working.</li>
+	</ul>
   </div>
   <span class="section-title">Research & Interests</span>
   <div class="research-block">
