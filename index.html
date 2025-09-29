@@ -364,45 +364,52 @@ h1 {
     I’m interested in computer vision, deep learning, generative AI, and image processing, focusing on efficient algorithms for novel view synthesis, camera pose estimation, and sensor fusion.<br />
     My projects cover computer vision, robotics, and image processing, bridging theory and real-world applications in both academia and industry.
   </div>
-  <!-- Infinite Horizontal Map Scroll Bar -->
-  <div class="infinite-bar-wrap" style="overflow:hidden; margin-top:32px; border-radius:16px; background:rgba(10,20,40,0.20);">
-    <div class="infinite-bar" style="display:flex; align-items:center; gap:18px; cursor:grab; user-select:none;">
-      <img src="https://www.clustrmaps.com/map_v2.png?d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&cl=ffffff" 
-        style="height:90px;width:auto;border-radius:7px;" alt="ClustrMaps-1" />
-      <img src="https://www.clustrmaps.com/map_v2.png?d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&cl=222cff" 
-        style="height:90px;width:auto;border-radius:7px;" alt="ClustrMaps-2" />
-      <img src="https://www.clustrmaps.com/map_v2.png?d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&cl=fcfcfc"
-        style="height:90px;width:auto;border-radius:7px;" alt="ClustrMaps-3" />
-      <!-- 可重複添加更多圖片，或換 cl 參數呈現不同色 -->
-    </div>
-  </div>
-  <script>
-  const bar = document.querySelector('.infinite-bar');
-  let isDrag = false, startX, scrollLeft;
-  bar.addEventListener('mousedown', e => {
-    isDrag = true;
-    bar.style.cursor = 'grabbing';
-    startX = e.pageX - bar.offsetLeft;
-    scrollLeft = bar.scrollLeft;
-  });
-  document.addEventListener('mouseup', () => {
-    isDrag = false; bar.style.cursor = 'grab';
-  });
-  bar.addEventListener('mouseleave', () => {
-    isDrag = false; bar.style.cursor = 'grab';
-  });
-  bar.addEventListener('mousemove', e => {
-    if(!isDrag) return;
-    const x = e.pageX - bar.offsetLeft;
-    bar.scrollLeft = scrollLeft - (x - startX);
-  });
-  // 複製內容數次，造成近似無限滑動
-  for(let i=0; i<3; i++) {
-    Array.from(bar.children).forEach(node => {
-      bar.appendChild(node.cloneNode(true));
-    });
-  }
-  </script>
+	<!-- Infinite ClustrMaps Bar (拖曳/循環) -->
+	<div class="infinite-bar-wrap" style="overflow:hidden; margin-top:32px; border-radius:16px; background:rgba(10,20,40,0.20);">
+	  <div class="infinite-bar" style="display:flex; align-items:center; gap:18px; cursor:grab; user-select:none;">
+		<a href='https://clustrmaps.com/site/1c801'  title='Visit tracker' target="_blank" rel="noopener noreferrer">
+		  <img src='https://clustrmaps.com/map_v2.png?cl=00eaff&w=231&t=tt&d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&co=2e134e&ct=b400ff'
+			style="height:90px; width:auto; border-radius:7px;" alt="ClustrMaps1" />
+		</a>
+		<a href='https://clustrmaps.com/site/1c801'  title='Visit tracker' target="_blank" rel="noopener noreferrer">
+		  <img src='https://clustrmaps.com/map_v2.png?cl=ff7fff&w=231&t=tt&d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&co=2e134e&ct=ffb400'
+			style="height:90px; width:auto; border-radius:7px;" alt="ClustrMaps2" />
+		</a>
+		<a href='https://clustrmaps.com/site/1c801'  title='Visit tracker' target="_blank" rel="noopener noreferrer">
+		  <img src='https://clustrmaps.com/map_v2.png?cl=00ffd5&w=231&t=tt&d=sN_XlW9bfFnI2iC8SlB6CkxOh51iI7n3kQ80M-EPG9Y&co=2e134e&ct=00b4ff'
+			style="height:90px; width:auto; border-radius:7px;" alt="ClustrMaps3" />
+		</a>
+		<!-- 可複製任意多，cl/ct 顏色參數換一換資訊更豐富 -->
+	  </div>
+	</div>
+	<script>
+	const bar = document.querySelector('.infinite-bar');
+	let isDrag = false, startX, scrollLeft;
+	bar.addEventListener('mousedown', e => {
+	  isDrag = true;
+	  bar.style.cursor = 'grabbing';
+	  startX = e.pageX - bar.offsetLeft;
+	  scrollLeft = bar.scrollLeft;
+	});
+	document.addEventListener('mouseup', () => {
+	  isDrag = false; bar.style.cursor = 'grab';
+	});
+	bar.addEventListener('mouseleave', () => {
+	  isDrag = false; bar.style.cursor = 'grab';
+	});
+	bar.addEventListener('mousemove', e => {
+	  if(!isDrag) return;
+	  const x = e.pageX - bar.offsetLeft;
+	  bar.scrollLeft = scrollLeft - (x - startX);
+	});
+	// 複製內容數次，造成近似無限滑動
+	for(let i=0; i<10; i++) {
+	  Array.from(bar.children).forEach(node => {
+		bar.appendChild(node.cloneNode(true));
+	  });
+	}
+	</script>
+
 </div>
 </body>
 </html>
