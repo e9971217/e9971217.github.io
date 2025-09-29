@@ -403,7 +403,7 @@ h1 {
 	  bar.scrollLeft = scrollLeft - (x - startX);
 	});
 	// 複製內容數次，造成近似無限滑動
-	for(let i=0; i<20; i++) {
+	for(let i=0; i<3; i++) {
 	  Array.from(bar.children).forEach(node => {
 		bar.appendChild(node.cloneNode(true));
 	  });
@@ -413,6 +413,7 @@ h1 {
 </div>
 </body>
 </html>
+
 
 
 
